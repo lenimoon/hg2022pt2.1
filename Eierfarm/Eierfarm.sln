@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EierfarmBl", "EierfarmBl\EierfarmBl.csproj", "{B49A786E-99FE-486A-93E8-CA5F66A90098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EierfarmUnitTests", "EierfarmUnitTests\EierfarmUnitTests.csproj", "{2FCD220E-1038-45A9-9E11-A1DCDD862F87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B49A786E-99FE-486A-93E8-CA5F66A90098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49A786E-99FE-486A-93E8-CA5F66A90098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49A786E-99FE-486A-93E8-CA5F66A90098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49A786E-99FE-486A-93E8-CA5F66A90098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FCD220E-1038-45A9-9E11-A1DCDD862F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FCD220E-1038-45A9-9E11-A1DCDD862F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FCD220E-1038-45A9-9E11-A1DCDD862F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FCD220E-1038-45A9-9E11-A1DCDD862F87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E415321-50B2-4E99-80D9-6A62F192FD6A}
+	EndGlobalSection
+EndGlobal
