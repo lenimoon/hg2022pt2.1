@@ -14,8 +14,6 @@ namespace HistoricalRatesDal
         public Archive(string url)
         {
             this.TradingDays = GetData(url);
-
-
         }
 
         /// <summary>
@@ -27,25 +25,29 @@ namespace HistoricalRatesDal
         private List<TradingDay>? GetData(string url)
         {
 
-            List<TradingDay> days = new();
+            //List<TradingDay> days = new();
 
-            XDocument document=XDocument.Load(url);
+            XDocument document = XDocument.Load(url);
 
             var q = document.Root.Descendants()
-                                .Where(xe => xe.Name == "Cube"
-                                        && xe.Attributes().Count() == 1);
+                                .Where(xe => xe.Name.LocalName == "Cube"
+                                        && xe.Attributes().Count() == 1)
+                                // Projektion auf TradingDays
+                                .Select(xe => new TradingDay(xe));
 
-            foreach (var item in q)
-            {
-                TradingDay tradingDay = new TradingDay()
-                {
-                    Date = Convert.ToDateTime(item.Attribute("time").Value)
-                };
+            return q.ToList();
 
-                days.Add(tradingDay);
-            }
+            //foreach (var item in q)
+            //{
+            //    TradingDay tradingDay = new TradingDay()
+            //    {
+            //        Date = Convert.ToDateTime(item.Attribute("time").Value)
+            //    };
 
-            return days;
+            //    days.Add(tradingDay);
+            //}
+
+            //return days;
         }
 
         public List<TradingDay>? TradingDays { get; set; } = new List<TradingDay>();
