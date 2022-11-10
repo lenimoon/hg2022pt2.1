@@ -5,8 +5,22 @@ using System.Text;
 
 namespace EierfarmBl
 {
-    public abstract class Bird : IEggProducer, IDisposable, IBird
+    public abstract class Bird : IEggProducer, IDisposable
     {
+
+        /// <summary>
+        /// Tritt auf, wenn sich der Wert einer Property ändert.
+        /// </summary>
+        public event EventHandler<BirdEventArgs> PropertyChanged;
+
+        private void OnPropertyChanged(string propName)
+        {
+            if (this.PropertyChanged != null)
+            {
+                this.PropertyChanged(this, new BirdEventArgs(propName));
+            }
+        }
+
         public Bird(string name)
         {
             this.Name = name;
@@ -14,11 +28,36 @@ namespace EierfarmBl
 
         public List<Egg> Eggs { get; set; } = new List<Egg>();
 
-        public DateTime HatchDate { get; set; }
+        public DateTime HatchDate { get; init; }
 
-        public string Name { get; set; }
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+                OnPropertyChanged("Name");
+            }
+        }
 
-        public double Weight { get; set; }
+        private double _weight;
+
+        public double Weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                _weight = value;
+                OnPropertyChanged("Weight");
+            }
+        }
 
         public void Dispose()
         {
@@ -33,5 +72,15 @@ namespace EierfarmBl
         public abstract void Eat();
 
         public abstract void LayEgg();
+    }
+
+    public class BirdEventArgs : EventArgs
+    {
+        public BirdEventArgs(string changedProperty)
+        {
+            this.ChangedProperty = changedProperty; 
+        }
+
+        public string ChangedProperty { get; set; }
     }
 }

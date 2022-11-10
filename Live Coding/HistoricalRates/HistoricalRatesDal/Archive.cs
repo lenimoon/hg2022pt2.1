@@ -26,12 +26,11 @@ namespace HistoricalRatesDal
         {
 
             //List<TradingDay> days = new();
-
             XDocument document = XDocument.Load(url);
 
             var q = document.Root.Descendants()
                                 .Where(xe => xe.Name.LocalName == "Cube"
-                                        && xe.Attributes().Count() == 1)
+                                && xe.Attributes().Count() == 1)
                                 // Projektion auf TradingDays
                                 .Select(xe => new TradingDay(xe));
 
@@ -48,6 +47,15 @@ namespace HistoricalRatesDal
             //}
 
             //return days;
+        }
+
+        private bool CheckName(XElement xElement, string name)
+        {
+            if (xElement.Name.LocalName == name)
+            {
+                return true;
+            }
+            return false;
         }
 
         public List<TradingDay>? TradingDays { get; set; } = new List<TradingDay>();

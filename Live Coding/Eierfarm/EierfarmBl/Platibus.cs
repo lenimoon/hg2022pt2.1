@@ -20,7 +20,7 @@ namespace EierfarmBl
         {
             if (this.Weight>2500)
             {
-                Egg egg = new Egg();
+                Egg egg = new Egg(this);
                 this.Weight -= egg.Weight;
                 this.Eggs.Add(egg);
             }

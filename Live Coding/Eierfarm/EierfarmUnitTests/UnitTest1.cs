@@ -1,5 +1,7 @@
 
 
+using System.Text;
+
 namespace EierfarmUnitTests
 {
     public class Tests
@@ -49,6 +51,30 @@ namespace EierfarmUnitTests
             double after = goose.Weight;
 
             Assert.IsTrue(before < after);
+
+        }
+
+        [Test]
+        public void IsChickenWeightFiringEvent()
+        {
+            Chicken chicken = new Chicken("Chicken");
+
+            chicken.PropertyChanged += this.Chicken_PropertyChanged;
+
+            chicken.Name = "Hilde";
+            chicken.Weight = 1234;
+
+            chicken.Eat();
+        }
+
+        private void Chicken_PropertyChanged1(object? sender, BirdEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Chicken_PropertyChanged(object? sender, BirdEventArgs e)
+        {
+            Console.WriteLine($"Die Property {e.ChangedProperty} von {((Chicken)sender).Name} hat PropertyChanged ausgelöst.");
 
         }
     }
