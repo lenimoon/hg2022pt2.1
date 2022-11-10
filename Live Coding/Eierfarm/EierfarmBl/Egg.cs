@@ -4,7 +4,7 @@
     {
 
         // Konstruktor für eine Ei-Instanz
-        public Egg(Chicken mother)
+        public Egg(IEggProducer mother)
         {
             this.Mother = mother;
 
@@ -41,7 +41,8 @@
 
         public DateTime LayingDate { get; set; }
 
-        public Chicken Mother { get; set; }
+        public IEggProducer Mother { get; set; }
+
     }
 
     public enum EggColor

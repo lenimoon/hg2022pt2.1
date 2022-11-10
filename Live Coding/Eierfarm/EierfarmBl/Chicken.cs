@@ -1,21 +1,16 @@
 ﻿
 namespace EierfarmBl
 {
-    public class Chicken
+    public class Chicken : Bird
     {
-        public Chicken(string name)
+        public Chicken(string name) : base(name)
         {
             this.Name = name;
             this.Weight = 1000;
             this.HatchDate = DateTime.Today.AddDays(-140);
         }
 
-        public List<Egg> Eggs { get; set; }=new List<Egg>();
-        public double Weight { get; set; }
-        public string Name { get; set; }
-        public DateTime HatchDate { get; set; }
-
-        public void LayEgg()
+        public override void LayEgg()
         {
             if (this.Weight > 1500)
             {
@@ -25,7 +20,7 @@ namespace EierfarmBl
             }
         }
 
-        public void Eat()
+        public override void Eat()
         {
             if (this.Weight < 3000)
             {

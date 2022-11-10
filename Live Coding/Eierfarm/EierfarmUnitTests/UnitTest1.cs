@@ -36,5 +36,20 @@ namespace EierfarmUnitTests
             Assert.AreEqual(1, chicken.Eggs.Count);
 
         }
+
+        [Test]
+        public void IsGooseEating()
+        {
+            Goose goose = new Goose("Gerda");
+
+            double before = goose.Weight;
+
+            goose.Eat();
+
+            double after = goose.Weight;
+
+            Assert.IsTrue(before < after);
+
+        }
     }
 }
