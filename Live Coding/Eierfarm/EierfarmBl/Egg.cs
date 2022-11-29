@@ -1,7 +1,10 @@
-﻿namespace EierfarmBl
+﻿using System.Xml.Serialization;
+
+namespace EierfarmBl
 {
     public class Egg
     {
+        private Egg() { }
 
         // Konstruktor für eine Ei-Instanz
         public Egg(IEggProducer mother)
@@ -37,10 +40,12 @@
         // Property mit (durch den Compiler) autom. generiertem Backing Field
         public Guid Id { get; set; } = Guid.NewGuid(); // Auto-Property-Initializer
 
+        [XmlAttribute("Colour")]
         public EggColor Color { get; set; }
 
         public DateTime LayingDate { get; set; }
 
+        [XmlIgnore]
         public IEggProducer Mother { get; set; }
 
     }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Platypus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Eggs>
+    <Egg>
+      <Weight>55</Weight>
+      <Id>06938e98-9fb5-4c17-a37d-f4872c2cfa6a</Id>
+      <Color>Light</Color>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg>
+      <Weight>61</Weight>
+      <Id>989af96c-214b-468c-a550-080d1ce3a88f</Id>
+      <Color>Light</Color>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg>
+      <Weight>55</Weight>
+      <Id>7163fbae-5bc9-47b9-87e9-7a1da5e7d2d8</Id>
+      <Color>Green</Color>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg>
+      <Weight>72</Weight>
+      <Id>7ad17d69-2eaf-47dd-96f1-a59cbbafd51c</Id>
+      <Color>Light</Color>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg>
+      <Weight>45</Weight>
+      <Id>cb8a5f43-e28e-4bb0-8430-00431d8c0f6e</Id>
+      <Color>Green</Color>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+  </Eggs>
+  <Weight>2712</Weight>
+  <Name>Else</Name>
+</Platypus>

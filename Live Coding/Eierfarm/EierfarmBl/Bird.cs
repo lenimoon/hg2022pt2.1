@@ -1,23 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 namespace EierfarmBl
 {
-    public abstract class Bird : IEggProducer, IDisposable
+    public abstract class Bird : IEggProducer, IDisposable, INotifyPropertyChanged // INotifyPropertyChanged speziell für WPF entworfen
     {
 
         /// <summary>
         /// Tritt auf, wenn sich der Wert einer Property ändert.
         /// </summary>
-        public event EventHandler<BirdEventArgs> PropertyChanged;
+        //public event EventHandler<BirdEventArgs> PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)
             {
-                this.PropertyChanged(this, new BirdEventArgs(propName));
+                //this.PropertyChanged(this, new BirdEventArgs(propName));
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
 
@@ -26,7 +30,7 @@ namespace EierfarmBl
             this.Name = name;
         }
 
-        public List<Egg> Eggs { get; set; } = new List<Egg>();
+        public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
 
         public DateTime HatchDate { get; init; }
 
@@ -45,6 +49,7 @@ namespace EierfarmBl
         }
 
         private double _weight;
+
 
         public double Weight
         {

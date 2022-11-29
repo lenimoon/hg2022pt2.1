@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Chicken xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Eggs>
+    <Egg Colour="Light">
+      <Weight>48</Weight>
+      <Id>7fbfa7ca-4e04-4bce-b16d-8d9ebc1859a6</Id>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg Colour="Dark">
+      <Weight>54</Weight>
+      <Id>e5515706-e6e8-4f20-8c6e-fa47048024de</Id>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg Colour="Dark">
+      <Weight>61</Weight>
+      <Id>4a969552-b1a1-432b-8181-59b123721655</Id>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+    <Egg Colour="Dark">
+      <Weight>50</Weight>
+      <Id>88ce9fdd-e7eb-4f0c-b4ec-74a3cb02ce03</Id>
+      <LayingDate>0001-01-01T00:00:00</LayingDate>
+    </Egg>
+  </Eggs>
+  <HatchDate>2022-07-12T00:00:00+02:00</HatchDate>
+  <Name>Hilde</Name>
+  <Weight>1487</Weight>
+</Chicken>

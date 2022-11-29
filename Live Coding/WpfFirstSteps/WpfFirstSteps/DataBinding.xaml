@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="WpfFirstSteps.DataBinding"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfFirstSteps"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="DataBinding"
+    Width="301"
+    Height="255"
+    mc:Ignorable="d"
+    >
+    <Canvas>
+        <TextBox
+            Canvas.Left="99"
+            Canvas.Top="25"
+            Width="120"
+            Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
+            />
+        <TextBox
+            Canvas.Left="99"
+            Canvas.Top="48"
+            Width="120"
+            Text="{Binding ElementName=slider, Path=Value, Mode=OneTime}"
+            />
+        <TextBox
+            Canvas.Left="99"
+            Canvas.Top="71"
+            Width="120"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding ElementName=slider, Path=Value, Mode=OneWay}"
+            />
+        <TextBox
+            Canvas.Left="99"
+            Canvas.Top="94"
+            Width="120"
+            Text="{Binding ElementName=slider, Path=Value, Mode=OneWayToSource}"
+            />
+        <!--  Two-Way Binding ist Standard, wenn nichts anderes angegeben  -->
+        <TextBox
+            Canvas.Left="99"
+            Canvas.Top="117"
+            Width="120"
+            Text="{Binding ElementName=slider, Path=Value, Mode=TwoWay}"
+            />
+        <Slider
+            x:Name="slider"
+            Canvas.Left="99"
+            Canvas.Top="140"
+            Width="120"
+            Value="5"
+            />
+
+    </Canvas>
+</Window>

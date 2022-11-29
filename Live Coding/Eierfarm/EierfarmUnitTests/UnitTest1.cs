@@ -67,11 +67,6 @@ namespace EierfarmUnitTests
             chicken.Eat();
         }
 
-        private void Chicken_PropertyChanged1(object? sender, BirdEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void Chicken_PropertyChanged(object? sender, BirdEventArgs e)
         {
             Console.WriteLine($"Die Property {e.ChangedProperty} von {((Chicken)sender).Name} hat PropertyChanged ausgelöst.");

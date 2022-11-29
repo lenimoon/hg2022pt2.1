@@ -1,0 +1,53 @@
+﻿<Window
+    x:Class="EierfarmUi.NeuesTier"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EierfarmUi"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="NeuesTier"
+    Width="283"
+    Height="200"
+    mc:Ignorable="d"
+    >
+    <Canvas>
+        <TextBox
+            Canvas.Left="67"
+            Canvas.Top="16"
+            Width="178"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding AnimalName}"
+            />
+        <Label
+            Canvas.Left="20"
+            Canvas.Top="12"
+            Content="Name"
+            />
+        <GroupBox
+            Canvas.Left="20"
+            Canvas.Top="43"
+            Width="226"
+            Height="90"
+            Header="Tierart"
+            >
+            <UniformGrid Columns="1">
+                <RadioButton x:Name="radChicken" Content="Huhn" />
+                <RadioButton x:Name="radGoose" Content="Gans" />
+                <RadioButton
+                    x:Name="radPlatypus"
+                    Content="Schnabeltier"
+                    IsChecked="True"
+                    />
+            </UniformGrid>
+        </GroupBox>
+        <Button
+            Canvas.Left="166"
+            Canvas.Top="139"
+            Width="80"
+            Click="Button_Click"
+            Content="OK"
+            />
+
+    </Canvas>
+</Window>

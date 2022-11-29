@@ -3,6 +3,8 @@ namespace EierfarmBl
 {
     public class Chicken : Bird
     {
+        private Chicken():base("Neues Huhn") { }
+
         public Chicken(string name) : base(name)
         {
             this.Name = name;
