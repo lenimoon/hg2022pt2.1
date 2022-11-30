@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoricalRatesDal", "HistoricalRatesDal\HistoricalRatesDal.csproj", "{3B0A5D23-4415-4B4E-9AD0-53BB5F908EF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoricalRatesUnitTests", "HistoricalRatesUnitTests\HistoricalRatesUnitTests.csproj", "{5BA02715-E968-473A-A47B-EB1CCCD98150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HistoricalRatesUnitTests", "HistoricalRatesUnitTests\HistoricalRatesUnitTests.csproj", "{5BA02715-E968-473A-A47B-EB1CCCD98150}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoricalRatesUi", "HistoricalRatesUi\HistoricalRatesUi.csproj", "{30E22226-A8AB-41C3-9C0A-7439CB866CA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5BA02715-E968-473A-A47B-EB1CCCD98150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BA02715-E968-473A-A47B-EB1CCCD98150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BA02715-E968-473A-A47B-EB1CCCD98150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E22226-A8AB-41C3-9C0A-7439CB866CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E22226-A8AB-41C3-9C0A-7439CB866CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E22226-A8AB-41C3-9C0A-7439CB866CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E22226-A8AB-41C3-9C0A-7439CB866CA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

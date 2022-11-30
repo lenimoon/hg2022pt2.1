@@ -1,0 +1,106 @@
+﻿<Window
+    x:Class="HistoricalRatesUi.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dal="clr-namespace:HistoricalRatesDal;assembly=HistoricalRatesDal"
+    xmlns:local="clr-namespace:HistoricalRatesUi"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="400"
+    Height="250"
+    mc:Ignorable="d"
+    >
+    <Window.Resources>
+        <!--<DataTemplate x:Key="dtCurrency">
+            <TextBlock>
+                <Run Text="{Binding Symbol}" /><Run Text=": " />
+                <Run Text="{Binding EuroRate, StringFormat=#\,##0.0000}" />
+            </TextBlock>
+        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type dal:Currency}">
+            <TextBlock>
+                <Run Text="{Binding Symbol}" /><Run Text=": " />
+                <Run Text="{Binding EuroRate, StringFormat=#\,##0.0000}" />
+            </TextBlock>
+        </DataTemplate>
+        <local:EuroConverter x:Key="convEuro" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <ListBox
+            x:Name="lbxDays"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="3"
+            DisplayMemberPath="Date"
+            ItemsSource="{Binding TradingDays}"
+            />
+
+        <GridSplitter
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Width="4"
+            HorizontalAlignment="Center"
+            />
+
+        <!--<ListBox
+            Grid.Column="2"
+            Margin="3"
+            ItemTemplate="{StaticResource dtCurrency}"
+            ItemsSource="{Binding ElementName=lbxDays, Path=SelectedItem.Currencies}"
+            />-->
+        <ListBox
+            x:Name="lbxCurrencies"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="3"
+            ItemsSource="{Binding ElementName=lbxDays, Path=SelectedItem.Currencies}"
+            />
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="2"
+            Orientation="Horizontal"
+            >
+            <TextBox
+                x:Name="txtAmount"
+                Width="80"
+                Margin="3"
+                HorizontalAlignment="Left" 
+                />
+            <TextBlock
+                x:Name="blkResult"
+                Width="80"
+                Margin="3"
+                >
+                <TextBlock.Text>
+                    <MultiBinding
+                        Converter="{StaticResource convEuro}"
+                        ConverterCulture="DE"
+                        StringFormat="#,##0.0000"
+                        UpdateSourceTrigger="PropertyChanged"
+                        >
+                        <Binding ElementName="txtAmount" Path="Text" />
+                        <Binding ElementName="lbxCurrencies" Path="SelectedItem.EuroRate" />
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
+        </StackPanel>
+        <!--<TextBlock
+            Grid.Row="0"
+            Grid.Column="2"
+            Text="{Binding ElementName=lbxCurrencies, Path=SelectedItem}"
+            />-->
+    </Grid>
+</Window>

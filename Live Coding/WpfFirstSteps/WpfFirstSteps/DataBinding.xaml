@@ -6,13 +6,13 @@
     xmlns:local="clr-namespace:WpfFirstSteps"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="DataBinding"
-    Width="301"
+    Width="{Binding ElementName=slider,Path=Value}"
     Height="255"
     mc:Ignorable="d"
     >
     <Canvas>
         <TextBox
-            Canvas.Left="99"
+            Canvas.Left="{Binding ElementName=slider,Path=Value}"
             Canvas.Top="25"
             Width="120"
             Text="{Binding ElementName=slider, Path=Value, UpdateSourceTrigger=PropertyChanged}"
@@ -49,7 +49,9 @@
             Canvas.Left="99"
             Canvas.Top="140"
             Width="120"
-            Value="5"
+            Maximum="250"
+            Minimum="50"
+            Value="99"
             />
 
     </Canvas>
