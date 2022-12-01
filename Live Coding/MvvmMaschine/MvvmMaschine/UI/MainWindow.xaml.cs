@@ -1,5 +1,4 @@
-﻿using HistoricalRatesDal;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,19 +13,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HistoricalRatesUi
+namespace MvvmMaschine
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        TennisballWurfmaschine wurfmaschine = null;
         public MainWindow()
         {
             InitializeComponent();
 
-            Archive archive = new Archive("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml");
-            this.DataContext = archive;
+            wurfmaschine = new TennisballWurfmaschine();
+            this.DataContext = wurfmaschine;
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+            wurfmaschine.Start();
+        }
+
+        private void btnStopp_Click(object sender, RoutedEventArgs e)
+        {
+            wurfmaschine.Stopp();
         }
     }
 }

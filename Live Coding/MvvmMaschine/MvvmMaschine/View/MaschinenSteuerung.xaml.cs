@@ -1,4 +1,4 @@
-﻿using HistoricalRatesDal;
+﻿using MvvmMaschine.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,22 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HistoricalRatesUi
+namespace MvvmMaschine.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MaschinenSteuerung.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MaschinenSteuerung : Window
     {
-        public MainWindow()
+        public MaschinenSteuerung()
         {
             InitializeComponent();
 
-            Archive archive = new Archive("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.xml");
-            this.DataContext = archive;
+            this.DataContext = new MaschinenViewModel();
         }
     }
 }
